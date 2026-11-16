@@ -1,11 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scme.controlador.FXMLValidarConstanciasController">
-    
+<AnchorPane prefHeight="540.0" prefWidth="640.0" style="-fx-background-color: #F8FAFC;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scme.controlador.FXMLValidarConstanciasController">
+   <children>
+      <VBox spacing="16.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2E8F0; -fx-border-radius: 10;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+         <padding>
+            <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+         </padding>
+         <children>
+            <VBox spacing="4.0">
+               <children>
+                  <Label text="Validación de Constancias Pendientes (SCME-CU22)" textFill="#0F172A">
+                     <font><Font name="System Bold" size="20.0" /></font>
+                  </Label>
+                  <Label text="Revise el documento PDF adjunto y emita el dictamen administrativo." textFill="#64748B">
+                     <font><Font size="13.0" /></font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox spacing="6.0">
+               <children>
+                  <Label text="Constancia Pendiente de Revisión *" textFill="#334155"><font><Font name="System Bold" size="12.0" /></font></Label>
+                  <ComboBox fx:id="cmbConstanciaPendiente" maxWidth="1.7976931348623157E308" onAction="#accionCargarDetalle" prefHeight="36.0" promptText="-- Seleccione solicitud pendiente --" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #F1F5F9; -fx-padding: 12; -fx-background-radius: 8;">
+               <children>
+                  <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lblInfoEstudiante" text="Estudiante: --" textFill="#0F172A"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <Label fx:id="lblInfoCurso" text="Curso: --" textFill="#475569"><font><Font size="12.0" /></font></Label>
+                     </children>
+                  </VBox>
+                  <Button fx:id="btnVerDocumentoPDF" mnemonicParsing="false" onAction="#accionAbrirPDF" prefHeight="36.0" prefWidth="140.0" style="-fx-background-color: #0F172A; -fx-background-radius: 6; -fx-cursor: hand;" text="Abrir Archivo PDF" textFill="WHITE">
+                     <font><Font name="System Bold" size="12.0" /></font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator />
+            <VBox spacing="6.0">
+               <children>
+                  <Label text="Comentarios / Observaciones de Revisión" textFill="#334155"><font><Font name="System Bold" size="12.0" /></font></Label>
+                  <TextArea fx:id="txtComentariosAdmin" prefHeight="90.0" promptText="Escriba aquí observaciones o el motivo en caso de rechazar el documento..." wrapText="true" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" spacing="12.0">
+               <VBox.margin><Insets top="6.0" /></VBox.margin>
+               <children>
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="" prefHeight="38.0" prefWidth="105.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #CBD5E1; -fx-border-radius: 6; -fx-background-radius: 6; -fx-cursor: hand;" text="Cancelar" textFill="#334155">
+                     <font><Font name="System Bold" size="13.0" /></font>
+                  </Button>
+                  <Button fx:id="btnRechazar" mnemonicParsing="false" onAction="" prefHeight="38.0" prefWidth="125.0" style="-fx-background-color: #DC2626; -fx-background-radius: 6; -fx-cursor: hand;" text="Rechazar" textFill="WHITE">
+                     <font><Font name="System Bold" size="13.0" /></font>
+                  </Button>
+                  <Button fx:id="btnAprobar" mnemonicParsing="false" onAction="" prefHeight="38.0" prefWidth="135.0" style="-fx-background-color: #16A34A; -fx-background-radius: 6; -fx-cursor: hand;" text="Aprobar" textFill="WHITE">
+                     <font><Font name="System Bold" size="13.0" /></font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
+
