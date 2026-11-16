@@ -1,11 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scme.controlador.FXMLRegistrarAsistenciaController">
-    
+<AnchorPane prefHeight="460.0" prefWidth="520.0" style="-fx-background-color: #F8FAFC;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scme.controlador.FXMLRegistrarAsistenciaController">
+   <children>
+      <VBox spacing="18.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2E8F0; -fx-border-radius: 10;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+         <padding>
+            <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+         </padding>
+         <children>
+            <VBox spacing="4.0">
+               <children>
+                  <Label text="Control de Asistencia (SCME-CU17)" textFill="#0F172A">
+                     <font><Font name="System Bold" size="20.0" /></font>
+                  </Label>
+                  <Label text="Registre su entrada o salida clínica usando la hora oficial del servidor." textFill="#64748B">
+                     <font><Font size="13.0" /></font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="4.0" style="-fx-background-color: #F1F5F9; -fx-padding: 15; -fx-background-radius: 8;">
+               <children>
+                  <Label text="FECHA Y HORA DEL SERVIDOR" textFill="#475569">
+                     <font><Font name="System Bold" size="11.0" /></font>
+                  </Label>
+                  <Label fx:id="lblRelojServidor" text="15/11/2026 — 08:00:00 AM" textFill="#2563EB">
+                     <font><Font name="System Bold" size="22.0" /></font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox spacing="12.0">
+               <children>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Matrícula del Estudiante *" textFill="#334155"><font><Font name="System Bold" size="12.0" /></font></Label>
+                        <TextField fx:id="txtMatricula" prefHeight="36.0" promptText="Ej. S24013286" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Tipo de Movimiento *" textFill="#334155"><font><Font name="System Bold" size="12.0" /></font></Label>
+                        <ComboBox fx:id="cmbTipoRegistro" maxWidth="1.7976931348623157E308" prefHeight="36.0" promptText="Entrada / Salida" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" spacing="12.0">
+               <VBox.margin><Insets top="6.0" /></VBox.margin>
+               <children>
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="" prefHeight="38.0" prefWidth="110.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #CBD5E1; -fx-border-radius: 6; -fx-background-radius: 6; -fx-cursor: hand;" text="Cerrar" textFill="#334155">
+                     <font><Font name="System Bold" size="13.0" /></font>
+                  </Button>
+                  <Button fx:id="btnRegistrarAsistencia" mnemonicParsing="false" onAction="" prefHeight="38.0" prefWidth="165.0" style="-fx-background-color: #2563EB; -fx-background-radius: 6; -fx-cursor: hand;" text="Marcar Asistencia" textFill="WHITE">
+                     <font><Font name="System Bold" size="13.0" /></font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
